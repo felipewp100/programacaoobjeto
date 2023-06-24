@@ -6,16 +6,16 @@ import java.util.ArrayList;
 
 public class GerenciadorTarefasService {
     private ArrayList<Tarefa> tarefas;
-    private ArrayList<String> prioridades;
+    
 
     public GerenciadorTarefasService() {
         this.tarefas = new ArrayList<>();
-        this.prioridades = new ArrayList<>();
+        
     }
 
     public void adicionarTarefa(Tarefa tarefa) {
         tarefas.add(tarefa);
-        prioridades.add(tarefa.getPrioridade());
+       
         System.out.println("Tarefa adicionada com sucesso!");
     }
 
@@ -24,7 +24,7 @@ public class GerenciadorTarefasService {
             System.out.println("Número inválido.");
         } else {
             tarefas.remove(numero - 1);
-            prioridades.remove(numero - 1);
+          
             System.out.println("Tarefa removida com sucesso!");
         }
     }
@@ -35,7 +35,7 @@ public class GerenciadorTarefasService {
         } else {
             System.out.println("Tarefas:");
             for (int i = 0; i < tarefas.size(); i++) {
-                System.out.println((i + 1) + ". " + tarefas.get(i).getDescricao() + " (" + prioridades.get(i) + ")");
+                System.out.println((i + 1) + ". " + tarefas.get(i).getDescricao() + " (" +tarefas.get(i).getPrioridade() + ")");
             }
         }
     }
@@ -43,8 +43,5 @@ public class GerenciadorTarefasService {
     public ArrayList<Tarefa> getTarefas() {
         return tarefas;
     }
-
-    public ArrayList<String> getPrioridades() {
-        return prioridades;
-    }
+      
 }
